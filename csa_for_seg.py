@@ -396,7 +396,7 @@ def sample_and_group(npoint, radius, nsample, xyz, points, knn, csa_p):
     Bf, Nf, Cf = points.shape
     S = npoint
 
-    fps_idx = torch.as_tensor(np.random.choice(N, npoint, replace=True)).view(-1,npoint).repeat(B,1) # 1 (512,)
+    fps_idx = farthest_point_sample(xyz.contiguous(), npoint)  # [B, npoint, C] # 
     new_xyz = index_points(xyz, fps_idx)
 
     if knn:
