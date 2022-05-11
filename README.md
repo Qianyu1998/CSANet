@@ -4,3 +4,6 @@ is disordered and unstructured data. In this paper, we introduce a cross selfatt
 features of point cloud at the same time. To better capture features of different scales, a multi-scale fusion (MF) module is proposed, which can adaptively
 consider the information of different scales and establish a fast descent branch
 to bring richer gradient information to the network.
+
+
+Note that during actual training, we set the model's learning rate to 0.01！
